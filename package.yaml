@@ -1,0 +1,66 @@
+# This YAML file describes your package. Stack will automatically generate a
+# Cabal file when you run `stack build`. See the hpack website for help with
+# this file: <https://github.com/sol/hpack>.
+benchmarks:
+  eximp-benchmarks:
+    dependencies:
+    - base
+    - eximp
+    - criterion
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: benchmark
+category: Other
+description: eximp is a new package.
+executables:
+  eximp:
+    dependencies:
+    - base
+    - eximp
+    - optparse-applicative
+    - filepath
+    - bytestring
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: src
+extra-source-files:
+- CHANGELOG
+- LICENSE.md
+- package.yaml
+- README.md
+- stack.yaml
+ghc-options: -Wall
+github: githubuser/eximp
+library:
+  dependencies:
+  - base
+  - text
+  - postgresql-simple
+  - directory
+  - time
+  - bytestring
+  source-dirs: lib
+license: MIT
+maintainer: Author name here
+name: eximp
+synopsis: A new package.
+tests:
+  eximp-test-suite:
+    dependencies:
+    - base
+    - eximp
+    - tasty
+    - tasty-hspec
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: test-suite
+version: '0.0.0'
